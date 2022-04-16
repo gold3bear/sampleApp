@@ -14,6 +14,7 @@
 @property(nonatomic,strong,readwrite) UILabel *commentLabel;
 @property(nonatomic,strong,readwrite) UILabel *timeLabel;
 @property(nonatomic,strong,readwrite) UIImageView *rightImageView;
+@property(nonatomic,strong,readwrite) UIButton *deleteButton;
 
 
 @end
@@ -39,6 +40,7 @@
             self.rightImageView.clipsToBounds = YES;
             self.rightImageView;
         })];
+
         [self.contentView addSubview:({
             self.sourceLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 80, 50, 20)];
 //            self.sourceLabel.backgroundColor = [UIColor  redColor];
@@ -60,6 +62,13 @@
             self.timeLabel.font = [UIFont systemFontOfSize:12];
             self.timeLabel.textColor = [UIColor grayColor];
             self.timeLabel;
+        })];
+        [self.contentView addSubview:({
+            self.deleteButton = [[UIButton alloc] initWithFrame:CGRectMake(280, 80, 24, 20)];
+            [self.deleteButton setTitle:@"x" forState:UIControlStateNormal];
+            [self.deleteButton setTitle:@"v" forState:UIControlStateHighlighted];
+            self.deleteButton.backgroundColor = [UIColor grayColor];
+            self.deleteButton;
         })];
     }
     return self;
