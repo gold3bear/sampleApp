@@ -62,11 +62,12 @@
        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id" ];
     }
     
+    [cell layoutTableViewCell];
 
      //系统默认文字和图标
-    cell.textLabel.text = [NSString stringWithFormat:@"主标题-%@",@(indexPath.row)];
-    cell.detailTextLabel.text = @"副标题";
-    cell.imageView.image = [UIImage imageNamed:@"video"];
+//    cell.textLabel.text = [NSString stringWithFormat:@"主标题-%@",@(indexPath.row)];
+//    cell.detailTextLabel.text = @"副标题";
+//    cell.imageView.image = [UIImage imageNamed:@"video"];
     return cell;
 }
 
