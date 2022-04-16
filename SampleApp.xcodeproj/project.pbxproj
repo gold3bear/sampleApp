@@ -70,25 +70,33 @@
 		090B427027F35D7300A1D9EF /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				09B98BBB27FB40F500CDCDBA /* GTVideoViewController.h */,
-				09B98BBC27FB40F500CDCDBA /* GTVideoViewController.m */,
+				09623E03280AE2E700CB362A /* Controllers */,
 				090B427127F35D7300A1D9EF /* AppDelegate.h */,
 				090B427227F35D7300A1D9EF /* AppDelegate.m */,
 				090B427427F35D7300A1D9EF /* SceneDelegate.h */,
 				090B427527F35D7300A1D9EF /* SceneDelegate.m */,
-				090B427727F35D7300A1D9EF /* ViewController.h */,
-				090B427827F35D7300A1D9EF /* ViewController.m */,
-				09623E00280A674600CB362A /* GTNormalTableViewCell.h */,
-				09623E01280A674600CB362A /* GTNormalTableViewCell.m */,
 				090B427A27F35D7300A1D9EF /* Main.storyboard */,
 				090B427D27F35D7D00A1D9EF /* Assets.xcassets */,
 				090B427F27F35D7D00A1D9EF /* LaunchScreen.storyboard */,
 				090B428227F35D7D00A1D9EF /* Info.plist */,
 				090B428327F35D7D00A1D9EF /* main.m */,
-				09B98BBE27FC90CF00CDCDBA /* GTRecommendViewController.h */,
-				09B98BBF27FC90CF00CDCDBA /* GTRecommendViewController.m */,
 			);
 			path = SampleApp;
+			sourceTree = "<group>";
+		};
+		09623E03280AE2E700CB362A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				09B98BBB27FB40F500CDCDBA /* GTVideoViewController.h */,
+				09B98BBC27FB40F500CDCDBA /* GTVideoViewController.m */,
+				090B427727F35D7300A1D9EF /* ViewController.h */,
+				090B427827F35D7300A1D9EF /* ViewController.m */,
+				09B98BBE27FC90CF00CDCDBA /* GTRecommendViewController.h */,
+				09B98BBF27FC90CF00CDCDBA /* GTRecommendViewController.m */,
+				09623E00280A674600CB362A /* GTNormalTableViewCell.h */,
+				09623E01280A674600CB362A /* GTNormalTableViewCell.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

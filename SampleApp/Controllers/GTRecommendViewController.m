@@ -7,7 +7,7 @@
 
 #import "GTRecommendViewController.h"
 
-@interface GTRecommendViewController ()<UIScrollViewDelegate>
+@interface GTRecommendViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @end
 
@@ -32,6 +32,16 @@
     for (int i=0; i<5; i++) {
         [scrollView addSubview:({
             UIView *view = [[UIView alloc] initWithFrame:CGRectMake(scrollView.bounds.size.width * i, 0, scrollView.bounds.size.width, scrollView.bounds.size.height)];
+            [view addSubview:({
+                UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 200, 100, 100)];
+                view.backgroundColor = [UIColor yellowColor];
+                UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(boxClick)];
+                [view addGestureRecognizer:tapGesture];
+                tapGesture.delegate = self;
+                view;
+            })];
+            
+            
             view.backgroundColor = [colorArray objectAtIndex:i];
             view;
         })];
@@ -44,7 +54,12 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     NSLog(@"scrollViewDidScroll - %f",scrollView.contentOffset.x);
 }
-
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+    return YES;
+}
+-(void)boxClick{
+    NSLog(@"boxClick");
+}
 // called on start of dragging (may require some time and or distance to move)
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     NSLog(@"scrollViewWillBeginDragging - %f",scrollView.contentOffset.x);
