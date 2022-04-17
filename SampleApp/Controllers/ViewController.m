@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
+#import "GTDetailViewController.h"
 
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -47,14 +48,13 @@
     return 100;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UIViewController *controller = [UIViewController new];
+    GTDetailViewController *controller = [GTDetailViewController new];
     controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
     controller.view.backgroundColor = [UIColor lightGrayColor];
     [self.navigationController pushViewController:controller animated:YES];
-    
 
-    
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     
@@ -71,15 +71,15 @@
     return cell;
 }
 
--(void)pushController{
-    UIViewController *viewController = [UIViewController new];
-    viewController.view.backgroundColor = [UIColor whiteColor];
-    viewController.navigationItem.title = @"内容";
-    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
-
-    
-    [self.navigationController pushViewController:viewController animated:YES];
-}
+//-(void)pushController{
+//    UIViewController *viewController = [UIViewController new];
+//    viewController.view.backgroundColor = [UIColor whiteColor];
+//    viewController.navigationItem.title = @"内容";
+//    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
+//
+//
+//    [self.navigationController pushViewController:viewController animated:YES];
+//}
 
 
 @end
