@@ -16,6 +16,7 @@
 		090B428427F35D7D00A1D9EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 090B428327F35D7D00A1D9EF /* main.m */; };
 		09623E02280A674600CB362A /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09623E01280A674600CB362A /* GTNormalTableViewCell.m */; };
 		09623E06280B075400CB362A /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09623E05280B075400CB362A /* GTDetailViewController.m */; };
+		09623E09280C0C6200CB362A /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09623E08280C0C6100CB362A /* GTDeleteCellView.m */; };
 		09B98BBD27FB40F500CDCDBA /* GTVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B98BBC27FB40F500CDCDBA /* GTVideoViewController.m */; };
 		09B98BC027FC90CF00CDCDBA /* GTRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09B98BBF27FC90CF00CDCDBA /* GTRecommendViewController.m */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,8 @@
 		09623E01280A674600CB362A /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		09623E04280B075400CB362A /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
 		09623E05280B075400CB362A /* GTDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDetailViewController.m; sourceTree = "<group>"; };
+		09623E07280C0C6100CB362A /* GTDeleteCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDeleteCellView.h; sourceTree = "<group>"; };
+		09623E08280C0C6100CB362A /* GTDeleteCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTDeleteCellView.m; sourceTree = "<group>"; };
 		09B98BBB27FB40F500CDCDBA /* GTVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTVideoViewController.h; sourceTree = "<group>"; };
 		09B98BBC27FB40F500CDCDBA /* GTVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTVideoViewController.m; sourceTree = "<group>"; };
 		09B98BBE27FC90CF00CDCDBA /* GTRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTRecommendViewController.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				09B98BBC27FB40F500CDCDBA /* GTVideoViewController.m */,
 				090B427727F35D7300A1D9EF /* ViewController.h */,
 				090B427827F35D7300A1D9EF /* ViewController.m */,
+				09623E07280C0C6100CB362A /* GTDeleteCellView.h */,
+				09623E08280C0C6100CB362A /* GTDeleteCellView.m */,
 				09B98BBE27FC90CF00CDCDBA /* GTRecommendViewController.h */,
 				09B98BBF27FC90CF00CDCDBA /* GTRecommendViewController.m */,
 				09623E00280A674600CB362A /* GTNormalTableViewCell.h */,
@@ -175,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09623E06280B075400CB362A /* GTDetailViewController.m in Sources */,
+				09623E09280C0C6200CB362A /* GTDeleteCellView.m in Sources */,
 				09623E02280A674600CB362A /* GTNormalTableViewCell.m in Sources */,
 				090B427927F35D7300A1D9EF /* ViewController.m in Sources */,
 				09B98BBD27FB40F500CDCDBA /* GTVideoViewController.m in Sources */,

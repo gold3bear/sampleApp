@@ -17,6 +17,7 @@
 @property(nonatomic,strong,readwrite) UIButton *deleteButton;
 
 
+
 @end
 
 
@@ -93,7 +94,10 @@
 }
 
 -(void)deleteButtonClick{
-    NSLog(@"deleteButtonClick");
+//    NSLog(@"deleteButtonClick");
+    if(self.delegate && [self.delegate respondsToSelector:@selector(tabelViewCell:clickDeleteButton:)]){
+        [self.delegate tabelViewCell:self clickDeleteButton:self.deleteButton];
+    }
 }
 
 

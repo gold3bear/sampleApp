@@ -8,9 +8,10 @@
 #import "ViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
+#import "GTDeleteCellView.h"
 
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 
 @end
 
@@ -59,7 +60,8 @@
     GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
     
     if(!cell){
-       cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id" ];
+        cell = [[GTNormalTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"id" ];
+        cell.delegate = self;
     }
     
     [cell layoutTableViewCell];
@@ -70,6 +72,13 @@
 //    cell.imageView.image = [UIImage imageNamed:@"video"];
     return cell;
 }
+
+-(void)tabelViewCell:(UITableViewCell *)tableViewCell clickDeleteButton:(UIButton *)deleteButton{
+    GTDeleteCellView *view = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
+    [view showDeleteView];
+}
+
+
 
 //-(void)pushController{
 //    UIViewController *viewController = [UIViewController new];
