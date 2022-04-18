@@ -11,6 +11,7 @@
 
 @property(nonatomic,strong,readwrite) UIView *backgroundView;
 @property(nonatomic,strong,readwrite) UIButton *deleteButton;
+@property(nonatomic,copy,readwrite) dispatch_block_t deleteBlock;
 
 @end
 
@@ -39,7 +40,7 @@
     return self;
 }
 
--(void)showDeleteView{
+-(void)showDeleteViewFromPoin:(CGPoint) point clickBlock:(dispatch_block_t) clickBlock{
     //获取当前的屏幕
     NSSet *Scenes = [UIApplication sharedApplication].connectedScenes;
     UIWindowScene * currentScene = nil;
@@ -51,17 +52,26 @@
         }
     }
     [currentScene.keyWindow addSubview:self];
+
+    _deleteButton.frame = CGRectMake(point.x, point.y, 0, 0);
+    _deleteBlock = [clickBlock copy];
     
-    
-    [UIView animateWithDuration:1.f animations:^{
-        self.deleteButton.frame = CGRectMake((self.bounds.size.width -200)/2, (self.bounds.size.height - 200)/2, 200, 200);
+    [UIView animateWithDuration:1.f delay:0.f usingSpringWithDamping:0.5 initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                self.deleteButton.frame = CGRectMake((self.bounds.size.width -200)/2, (self.bounds.size.height - 200)/2, 200, 200);
+    } completion:^(BOOL finished) {
+        NSLog(@"");
     }];
 
+    
+//    [UIView animateWithDuration:1.f animations:^{
+//        self.deleteButton.frame = CGRectMake((self.bounds.size.width -200)/2, (self.bounds.size.height - 200)/2, 200, 200);
+//    }];
 }
 -(void)dismissDeleteView{
     [self removeFromSuperview];
 }
 -(void)_clickButton{
+    _deleteBlock();
     [self dismissDeleteView];
 }
 
