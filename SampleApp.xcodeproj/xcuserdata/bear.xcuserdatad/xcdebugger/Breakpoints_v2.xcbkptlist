@@ -64,7 +64,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "-showDeleteViewFromPoin:clickBlock:"
+            landmarkName = "-showDeleteViewFromPoint:clickBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -96,7 +96,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "-showDeleteViewFromPoin:clickBlock:"
+            landmarkName = "-showDeleteViewFromPoint:clickBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

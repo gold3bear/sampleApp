@@ -40,7 +40,7 @@
     return self;
 }
 
--(void)showDeleteViewFromPoin:(CGPoint) point clickBlock:(dispatch_block_t) clickBlock{
+-(void)showDeleteViewFromPoint:(CGPoint) point clickBlock:(dispatch_block_t) clickBlock{
     //获取当前的屏幕
     NSSet *Scenes = [UIApplication sharedApplication].connectedScenes;
     UIWindowScene * currentScene = nil;

@@ -88,7 +88,7 @@
     GTDeleteCellView *view = [[GTDeleteCellView alloc] initWithFrame:self.view.bounds];
     CGRect rect = [tableViewCell convertRect:deleteButton.frame toView:nil];
     __weak typeof(self) wself = self;
-    [view showDeleteViewFromPoin:rect.origin clickBlock:^{
+    [view showDeleteViewFromPoint:rect.origin clickBlock:^{
         __strong typeof(self) strongSelf = wself;
         [strongSelf.dataArray removeLastObject];
         [strongSelf.tableView deleteRowsAtIndexPaths:@[[strongSelf.tableView indexPathForCell:tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
