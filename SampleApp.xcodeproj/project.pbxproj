@@ -14,6 +14,7 @@
 		090B427E27F35D7D00A1D9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 090B427D27F35D7D00A1D9EF /* Assets.xcassets */; };
 		090B428127F35D7D00A1D9EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 090B427F27F35D7D00A1D9EF /* LaunchScreen.storyboard */; };
 		090B428427F35D7D00A1D9EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 090B428327F35D7D00A1D9EF /* main.m */; };
+		092AF45528117B1400CDA52B /* GTListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 092AF45428117B1400CDA52B /* GTListLoader.m */; };
 		09623E02280A674600CB362A /* GTNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09623E01280A674600CB362A /* GTNormalTableViewCell.m */; };
 		09623E06280B075400CB362A /* GTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09623E05280B075400CB362A /* GTDetailViewController.m */; };
 		09623E09280C0C6200CB362A /* GTDeleteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09623E08280C0C6100CB362A /* GTDeleteCellView.m */; };
@@ -34,6 +35,8 @@
 		090B428027F35D7D00A1D9EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		090B428227F35D7D00A1D9EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		090B428327F35D7D00A1D9EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		092AF45328117B1400CDA52B /* GTListLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTListLoader.h; sourceTree = "<group>"; };
+		092AF45428117B1400CDA52B /* GTListLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTListLoader.m; sourceTree = "<group>"; };
 		09623E00280A674600CB362A /* GTNormalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTNormalTableViewCell.h; sourceTree = "<group>"; };
 		09623E01280A674600CB362A /* GTNormalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTNormalTableViewCell.m; sourceTree = "<group>"; };
 		09623E04280B075400CB362A /* GTDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTDetailViewController.h; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 		090B427027F35D7300A1D9EF /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				092AF45228117A9E00CDA52B /* Loader */,
 				09B98BBB27FB40F500CDCDBA /* GTVideoViewController.h */,
 				09B98BBC27FB40F500CDCDBA /* GTVideoViewController.m */,
 				09B98BBE27FC90CF00CDCDBA /* GTRecommendViewController.h */,
@@ -112,6 +116,15 @@
 				09623E01280A674600CB362A /* GTNormalTableViewCell.m */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		092AF45228117A9E00CDA52B /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				092AF45328117B1400CDA52B /* GTListLoader.h */,
+				092AF45428117B1400CDA52B /* GTListLoader.m */,
+			);
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		09623E03280AE2E700CB362A /* NewsController */ = {
@@ -200,6 +213,7 @@
 				09623E02280A674600CB362A /* GTNormalTableViewCell.m in Sources */,
 				090B427927F35D7300A1D9EF /* GTNewsViewController.m in Sources */,
 				09B98BBD27FB40F500CDCDBA /* GTVideoViewController.m in Sources */,
+				092AF45528117B1400CDA52B /* GTListLoader.m in Sources */,
 				09B98BC027FC90CF00CDCDBA /* GTRecommendViewController.m in Sources */,
 				090B427327F35D7300A1D9EF /* AppDelegate.m in Sources */,
 				090B428427F35D7D00A1D9EF /* main.m in Sources */,

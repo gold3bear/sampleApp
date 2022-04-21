@@ -9,11 +9,13 @@
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
 #import "GTDeleteCellView.h"
+#import "GTListLoader.h"
 
 
 @interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 @property(nonatomic,strong,readwrite) UITableView *tableView;
 @property(nonatomic,strong,readwrite) NSMutableArray *dataArray;
+@property(nonatomic,strong,readwrite) GTListLoader *listLoader;
 
 @end
 
@@ -42,6 +44,9 @@
     
     
     [self.view addSubview:_tableView];
+    
+    self.listLoader = [GTListLoader new];
+    [self.listLoader loadListData];
 }
 # pragma mark - tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
