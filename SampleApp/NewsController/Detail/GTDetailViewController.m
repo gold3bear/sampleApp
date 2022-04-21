@@ -16,6 +16,7 @@
 @implementation GTDetailViewController
 - (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+    [self.webView removeFromSuperview];//是否会被自动回收?
 }
 
 
@@ -32,17 +33,17 @@
         self.progressVeiw;
     })];
     
-        
+    
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://time.geekbang.org"]]];
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options: NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"title" options: NSKeyValueObservingOptionNew context:nil];
-
-
+    
+    
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
-        NSLog(@"decidePolicyForNavigationAction");
-        decisionHandler(WKNavigationActionPolicyAllow);
+    NSLog(@"decidePolicyForNavigationAction");
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation{
@@ -51,16 +52,16 @@
 - (void)observeValueForKeyPath:(nullable NSString *)keyPath ofObject:(nullable id)object change:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change context:(nullable void *)context{
     self.progressVeiw.progress =  self.webView.estimatedProgress;
     self.title = self.webView.title;
-
+    
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

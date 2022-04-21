@@ -5,20 +5,21 @@
 //  Created by bear on 2022/3/29.
 //
 
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GTNormalTableViewCell.h"
 #import "GTDetailViewController.h"
 #import "GTDeleteCellView.h"
 
 
-@interface ViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
+@interface GTNewsViewController ()<UITableViewDataSource,UITableViewDelegate,GTNormalTableViewCellDelegate>
 @property(nonatomic,strong,readwrite) UITableView *tableView;
 @property(nonatomic,strong,readwrite) NSMutableArray *dataArray;
 
 @end
 
-@implementation ViewController
+@implementation GTNewsViewController
 
+#pragma mark - life cycle
 - (instancetype)init{
     self = [super init];
     if(self){
@@ -34,24 +35,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
-//    UIView *view2 = [[UIView alloc] init];
-//    view2.backgroundColor = [UIColor greenColor];
-//    view2.frame = CGRectMake(150, 150, 100, 100);
-//    [self.view addSubview:view2];
-//
-//    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushController)];
-//    [view2 addGestureRecognizer:tapGesture];
-    
-    
+  
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     
-
+    
     [self.view addSubview:_tableView];
 }
-
+# pragma mark - tableView delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return _dataArray.count;
 }
@@ -64,8 +56,9 @@
     controller.title = [NSString stringWithFormat:@"%@",@(indexPath.row)];
     controller.view.backgroundColor = [UIColor lightGrayColor];
     [self.navigationController pushViewController:controller animated:YES];
-
+    
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     GTNormalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"id"];
@@ -76,11 +69,11 @@
     }
     
     [cell layoutTableViewCell];
-
-     //系统默认文字和图标
-//    cell.textLabel.text = [NSString stringWithFormat:@"主标题-%@",@(indexPath.row)];
-//    cell.detailTextLabel.text = @"副标题";
-//    cell.imageView.image = [UIImage imageNamed:@"video"];
+    
+    //系统默认文字和图标
+    //    cell.textLabel.text = [NSString stringWithFormat:@"主标题-%@",@(indexPath.row)];
+    //    cell.detailTextLabel.text = @"副标题";
+    //    cell.imageView.image = [UIImage imageNamed:@"video"];
     return cell;
 }
 
@@ -92,7 +85,7 @@
         __strong typeof(self) strongSelf = wself;
         [strongSelf.dataArray removeLastObject];
         [strongSelf.tableView deleteRowsAtIndexPaths:@[[strongSelf.tableView indexPathForCell:tableViewCell]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//        NSLog(@"111l");
+        //        NSLog(@"111l");
     }];
 }
 

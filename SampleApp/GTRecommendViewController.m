@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     scrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 5, self.view.bounds.size.height);
     NSArray *colorArray = @[[UIColor redColor],[UIColor blueColor],[UIColor greenColor],[UIColor yellowColor],[UIColor brownColor]];
@@ -48,7 +48,7 @@
     }
     scrollView.delegate = self;
     scrollView.pagingEnabled = YES;
-//    scrollView.showsHorizontalScrollIndicator = NO;
+    //    scrollView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:scrollView];
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

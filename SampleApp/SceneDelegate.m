@@ -6,7 +6,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "ViewController.h"
+#import "GTNewsViewController.h"
 #import "GTVideoViewController.h"
 #import "GTRecommendViewController.h"
 
@@ -17,6 +17,10 @@
 @implementation SceneDelegate
 
 
+static GTNewsViewController *extracted() {
+    return [GTNewsViewController new];
+}
+
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -26,24 +30,22 @@
     self.window.frame = windowScene.coordinateSpace.bounds;
     UITabBarController *tabbarController = [UITabBarController new];
     
-    ViewController *viewController = [ViewController new];
-    viewController.tabBarItem.title = @"新闻";
-    viewController.tabBarItem.image = [UIImage imageNamed:@"home"];
-    viewController.tabBarItem.selectedImage = [UIImage imageNamed:@"home_sel"];
+    GTNewsViewController *newsViewController = extracted();
+    newsViewController.tabBarItem.title = @"新闻";
+    newsViewController.tabBarItem.image = [UIImage imageNamed:@"home"];
+    newsViewController.tabBarItem.selectedImage = [UIImage imageNamed:@"home_sel"];
 
     GTVideoViewController *videoController = [GTVideoViewController new];
     GTRecommendViewController *recommendController = [GTRecommendViewController new];
-//
 
-
-    UIViewController *controller4 = [UIViewController new];
-    controller4.view.backgroundColor = [UIColor yellowColor];
-    controller4.tabBarItem.title = @"我的";
-    controller4.tabBarItem.image = [UIImage imageNamed:@"my"];
-    controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"my_sel"];
+    UIViewController *mineController = [UIViewController new];
+    mineController.view.backgroundColor = [UIColor yellowColor];
+    mineController.tabBarItem.title = @"我的";
+    mineController.tabBarItem.image = [UIImage imageNamed:@"my"];
+    mineController.tabBarItem.selectedImage = [UIImage imageNamed:@"my_sel"];
 //
     tabbarController.tabBar.backgroundColor = [UIColor whiteColor];
-    [tabbarController setViewControllers:@[viewController,videoController,recommendController,controller4]];
+    [tabbarController setViewControllers:@[newsViewController,videoController,recommendController,mineController]];
     
     tabbarController.delegate = self;
     
