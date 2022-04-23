@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D2BE9882-A3D3-426B-93AE-0D20C7599B74"
+            uuid = "8CE3B9B8-CD39-416E-879B-99B7A5BCF084"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SampleApp/Loader/GTListLoader.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "-loadListData"
             landmarkType = "7">
          </BreakpointContent>
