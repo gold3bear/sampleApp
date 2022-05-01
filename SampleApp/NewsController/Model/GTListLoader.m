@@ -38,5 +38,10 @@
         
     }];
     [dataTask resume];
+    [self _getSandBoxPath];
+}
+-(void)_getSandBoxPath{
+    NSArray *pathArray = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,NSUserDomainMask,YES);
+    NSLog(@"");
 }
 @end
