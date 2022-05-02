@@ -11,6 +11,7 @@
 @interface GTDetailViewController ()<WKNavigationDelegate>
 @property (nonatomic,strong,readwrite) WKWebView *webView;
 @property (nonatomic,strong,readwrite) UIProgressView *progressVeiw;
+@property (nonatomic,strong,readwrite) NSString *urlString;
 @end
 
 @implementation GTDetailViewController
@@ -19,6 +20,13 @@
     [self.webView removeFromSuperview];//是否会被自动回收?
 }
 
+- (instancetype)initWithUrlString:(NSString *) urlString{
+    self = [super init];
+    if(self){
+        self.urlString = urlString;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,7 +42,7 @@
     })];
     
     
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://time.geekbang.org"]]];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_urlString]]];
     [self.webView addObserver:self forKeyPath:@"estimatedProgress" options: NSKeyValueObservingOptionNew context:nil];
     [self.webView addObserver:self forKeyPath:@"title" options: NSKeyValueObservingOptionNew context:nil];
     
