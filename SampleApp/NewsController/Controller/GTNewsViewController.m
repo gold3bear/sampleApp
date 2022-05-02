@@ -66,7 +66,7 @@
     controller.title = [NSString stringWithFormat:@"%@",item.title];
     controller.view.backgroundColor = [UIColor lightGrayColor];
     [self.navigationController pushViewController:controller animated:YES];
-    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:item.uniquekey];
 }
 
 
