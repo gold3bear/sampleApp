@@ -7,6 +7,7 @@
 
 #import "GTNormalTableViewCell.h"
 #import "GTListItem.h"
+#import "SDWebImage.h"
 
 @interface GTNormalTableViewCell ()
 
@@ -102,10 +103,14 @@
     [self.timeLabel sizeToFit];
     self.timeLabel.frame = CGRectMake(self.commentLabel.frame.origin.x + self.commentLabel.frame.size.width + 15, self.timeLabel.frame.origin.y, self.timeLabel.frame.size.width, self.timeLabel.frame.size.height);
     
-#warning image
-    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]];
-    UIImage *image = [UIImage imageWithData:imageData];
-    self.rightImageView.image = image;
+    
+//#warning image
+//    NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:item.picUrl]];
+//    UIImage *image = [UIImage imageWithData:imageData];
+//    self.rightImageView.image = image;
+    [self.rightImageView sd_setImageWithURL:[NSURL URLWithString:item.picUrl] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        NSLog(@"");
+    }];
 }
 
 -(void)deleteButtonClick{
